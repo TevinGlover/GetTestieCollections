@@ -26,6 +26,18 @@ public class TestStack {
     }
 
     // Make a bigger test exercising more Stack methods...
+@Test
+    public void TestStackPush() {
+        Stack<String> stack = new Stack<>();///given
+
+
+        stack.push("Hello world");// when
+
+
+        Integer actual =  stack.size();
+        Integer expected =  1;
+        Assert.assertEquals( expected, actual );//the
+    }
     @Test
     public void testIfStackPop(){
         Stack<String> stack = new Stack<>(); //give
@@ -51,16 +63,41 @@ public class TestStack {
         Assert.assertEquals( expected, actual );//then
     }
     @Test
-    public void testIfStackSet(){
+    public void testIfStackSet(){// remember stacks is filo
         Stack<String> stack = new Stack<>(); //give
-        stack.push("fart");//2
+        stack.push("fart");//0
         stack.push("art"); //1
-        stack.push("far");// 0
+        stack.push("far");// 2
 
         stack.set(2,"free");// when
        String actual =  stack.peek();
         String expected =  "free" ;
         Assert.assertEquals( expected, actual );//then
+    }
+
+    @Test
+    public void testIfStackPeek(){
+        Stack<String> stack = new Stack<>(); //give
+        stack.push("fart");//0
+        stack.push("art"); //1
+        stack.push("far");// 2
+
+        // when
+        String actual =  stack.peek();
+        String expected =  "far" ;
+        Assert.assertEquals( expected, actual );//then
+    }
+
+    @Test
+    public void testIfStackIsEmpty(){
+        Stack<String> stack = new Stack<>(); //give
+//        stack.push("fart");//0
+//        stack.push("art"); //1
+//        stack.push("far");// 2
+
+        // when
+       boolean actual = stack.isEmpty();
+        Assert.assertTrue(  actual );//then
     }
     /**
      * Tips from The Leuth use https://www.w3schools.com and https://www.baeldung.com for the types of Collections.
